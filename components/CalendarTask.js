@@ -19,18 +19,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 10,
         marginVertical: 6,
-        // alignSelf: 'center',
-        // flex: 1,
-        // backgroundColor: "#fff",
-        // borderRadius: 15,
-        // padding: 10,
-        // marginVertical: 10,
-        // shadowColor: '#CECECE',
-        // shadowOffset: { width: 0, height: 1 },
-        // shadowOpacity: 0.5,
-        // shadowRadius: 10,  
-        // elevation: 10,
-        // width: '100%'
     },
     header: {
         fontSize: 15,

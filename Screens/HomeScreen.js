@@ -11,7 +11,7 @@ import { TaskContext } from '../shared/TaskProvider';
 export default function HomeScreen({navigation}) {
 
     // Global task list which updates state 
-    const [taskList,addTask,deleteTask,changeTaskName,taskFinish,numTasksFinished] = useContext(TaskContext);
+    const [taskList,addTask,deleteTask,changeTaskName,taskFinish,numTasksFinished,goalList,addGoal] = useContext(TaskContext);
 
 
     let tasksFinished = numTasksFinished;
@@ -29,9 +29,6 @@ export default function HomeScreen({navigation}) {
     // const date = new Date();
     const date = new XDate();
 
-    // const mth = date.toLocaleDateString("en-US", { month: 'short' });
-    // const day = date.toLocaleDateString("en-US", { day: '2-digit' });
-    // const dayName = date.toLocaleDateString("en-US", { weekday: 'long'});
 
     const mth = date.toString("MMMM");
     const day = date.toString("dd");
@@ -41,6 +38,11 @@ export default function HomeScreen({navigation}) {
     const todaysTasksBtn = () => {
         navigation.push('TodaysTasks');
     }
+
+    const goalsBtn = () => {
+        navigation.push('Goals');
+    }
+
 
     let [fontsLoaded] = useFonts({
         'Lato-Regular': require('../assets/fonts/Lato-Regular.ttf'),
@@ -69,11 +71,8 @@ export default function HomeScreen({navigation}) {
                 </Text>   of Tasks Completed
             </Text>
             <Text style={[styles.info,,{fontFamily: 'Lato-Regular'}]}>
-                <Text style={styles.redText}>15</Text>   Goals Reached
+                <Text style={styles.redText}>0</Text>   Goals Reached
             </Text>
-            {/* <Text style={[styles.info,,{fontFamily: 'Lato-Regular'}]}>
-                <Text style={styles.redText}>75%</Text>   To Do
-            </Text> */}
             <View style={styles.cardContainer}>
                 <View style={styles.card}> 
                     <Text style={[styles.cardTitle,{fontFamily: 'Lato-Regular'}]}>{taskList.length - tasksFinished}</Text>
@@ -84,31 +83,15 @@ export default function HomeScreen({navigation}) {
                     <Text style={[styles.cardSubTitle2,{fontFamily: 'Lato-Regular'}]}>Complete</Text>
                 </View>
                 <View style={styles.card2}> 
-                    <Text style={[styles.cardTitle2,{fontFamily: 'Lato-Regular'}]}>25</Text>
+                    <Text style={[styles.cardTitle2,{fontFamily: 'Lato-Regular'}]}>{goalList.length}</Text>
                     <Text style={[styles.cardSubTitle2,{fontFamily: 'Lato-Regular'}]}>Goals</Text>
                 </View>
             </View>
-            <View style={styles.cardContainer}>
-                <View style={styles.card}> 
-                    <Text style={[styles.cardTitle,{fontFamily: 'Lato-Regular'}]}>25</Text>
-                    <Text style={[styles.cardSubTitle,{fontFamily: 'Lato-Regular'}]}>To Do</Text>
-                </View>
-                <View style={styles.card2}> 
-                    <Text style={[styles.cardTitle2,{fontFamily: 'Lato-Regular'}]}>25</Text>
-                    <Text style={[styles.cardSubTitle2,{fontFamily: 'Lato-Regular'}]}>In Progress</Text>
-                </View>
-                <View style={styles.card2}> 
-                    <Text style={[styles.cardTitle2,{fontFamily: 'Lato-Regular'}]}>25</Text>
-                    <Text style={[styles.cardSubTitle2,{fontFamily: 'Lato-Regular'}]}>Complete</Text>
-                </View>
-            </View>
-            {/* <TouchableOpacity style={styles.goalsCard} onPress={todaysTasksBtn}>
+            <TouchableOpacity style={styles.goalsCard} onPress={goalsBtn}>
                 <Text style={[styles.todaysTasksTitle,{fontFamily: 'Lato-Regular'}]}>Manage Your{"\n"}Goals</Text>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
             <TouchableOpacity style={styles.todaysTasks} onPress={todaysTasksBtn}>
                 <Text style={[styles.todaysTasksTitle,{fontFamily: 'Lato-Regular'}]}>View Your{"\n"}Tasks</Text>
-                {/* <Image source={require('../assets/task.png')} style={styles.todaysTasksImg}></Image> */}
-                {/* <Text style={styles.todaysTasksArrow}>{'>'}</Text> */}
                 <Image source={require('../assets/arrow.png')} style={styles.todaysTasksImg}></Image>
             </TouchableOpacity>
         </View>

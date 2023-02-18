@@ -75,7 +75,7 @@ export default function TodaysTasksScreen({navigation,route}) {
                 {
                     taskList.map((item,ind) => {
                         if(item.date !== getCurrDateStr(currDate)) {
-                            return <Task key={ind} index={ind} text={item.text} progress={item.progress} finished={item.finished} date={item.dateLong} category={item.category} desc={item.desc}/>
+                            return <Task key={ind} index={ind} text={item.text} progress={item.progress} finished={item.finished} date={item.dateLong}/>
                         }
                     })
                 } 

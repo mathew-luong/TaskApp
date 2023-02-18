@@ -122,10 +122,7 @@ export default function NewTaskScreen({navigation,route}) {
         setTaskDesc("");
         setCatgOpen(false)
         setShow(false);
-        // navigation.navigate('TodaysTasks');
-        // ERROR WHEN THE USER HASNT GONE TO TODAYS TASKS SCREEN YET
         if(navigation.canGoBack()) {
-            // navigation.dispatch(StackActions.popToTop());
             navigation.goBack();
           }
         navigation.navigate('Home');
@@ -165,10 +162,6 @@ export default function NewTaskScreen({navigation,route}) {
             <View style={styles.row}>
                 <TextInput style={[styles.input,{width:'100%'}]} placeholder="Description (Optional)" value={taskDesc} onChangeText={descOnChange}/>
             </View>
-            {/* <View style={styles.row}>
-                <TextInput style={styles.input} placeholder="Start time (Optional)"/>
-                <TextInput style={styles.input} placeholder="End time (Optional)"/>
-            </View> */}
             <View style={styles.row}>
                 <TouchableOpacity style={styles.dateInput} onPress={showDatepicker}>
                     <Text style={styles.placeholderText}>{date.toDateString()}</Text>
@@ -177,7 +170,6 @@ export default function NewTaskScreen({navigation,route}) {
                     open={catgOpen}
                     value={catg}
                     items={catgItems}
-                    // setOpen={setCatgOpen}
                     setOpen={openCatgDropdown}
                     setValue={setCatg}
                     setItems={setCatgItems}

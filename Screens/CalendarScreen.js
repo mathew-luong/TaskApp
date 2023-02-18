@@ -112,9 +112,9 @@ export default function CalendarScreen({navigation,route}) {
             // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
             monthFormat={'MMMM yyyy'}
             // Handler which gets executed when visible month changes in calendar. Default = undefined
-            onMonthChange={month => {
-                console.log('month changed', month);
-            }}
+            // onMonthChange={month => {
+            //     console.log('month changed', month);
+            // }}
             // Do not show days of other months in month page. Default = false
             hideExtraDays={true}
             // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday

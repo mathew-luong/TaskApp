@@ -7,6 +7,7 @@ import HomeScreen from '../Screens/HomeScreen';
 import NewTaskScreen from '../Screens/NewTaskScreen';
 import { useFonts } from 'expo-font';
 import { useState } from 'react';
+import GoalsScreen from '../Screens/GoalsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -90,6 +91,7 @@ export default function MyTabBar() {
                 <StackNav.Screen name="Overview" component={HomeScreen} 
                 options={{title: "Home", headerTitleAlign: 'center'}}/>
                 <StackNav.Screen name="TodaysTasks" component={TodaysTasksScreen} options={{title: "All Tasks", headerTitleAlign: 'center'}}/>
+                <StackNav.Screen name="Goals" component={GoalsScreen} options={{title: "Goals", headerTitleAlign: 'center'}}/>
             </StackNav.Navigator>
         )
     }
