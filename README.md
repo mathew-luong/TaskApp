@@ -1,4 +1,4 @@
 TaskApp 
 
 Run:
-expo start
+npx expo start

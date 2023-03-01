@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { StyleSheet, Text, View, KeyboardAvoidingView, Keyboard } from 'react-native';
 import { useState, createContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
